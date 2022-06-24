@@ -1,0 +1,15 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
+^logo.*$
+^\.\.Rcheck$
+^\.github$
+^\.idea$
+^\.DS_Store$
+^inst/\.DS_Store$
+^inst/primermd/\.DS_Store$
+^cran-comments\.md$
+^CRAN-RELEASE$
+^README\.Rmd$

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="$lang$" xml:lang="$lang$"$if(dir)$ dir="$dir$"$endif$ 
+$if(auto-theme)$data-color-mode="auto"$else$$endif$ data-light-theme="$light-theme$" data-dark-theme="$dark-theme$">
+<head>
+
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  $for(author-meta)$
+  <meta name="author" content="$author-meta$" />
+  $endfor$
+  $if(date-meta)$
+  <meta name="dcterms.date" content="$date-meta$" />
+  $endif$
+  $if(keywords)$
+  <meta name="keywords" content="$for(keywords)$$keywords$$sep$, $endfor$" />
+  $endif$
+  <title>$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$</title>
+
+  $for(header-includes)$
+  $header-includes$
+  $endfor$
+
+  $if(use-prism)$$use-prism$$endif$
+
+  $if(highlighting-css)$
+  <style type="text/css" data-origin="pandoc">
+    $highlighting-css$
+  </style>
+  <script>
+  // remove everything from pandoc code styles _except_ for 'code span' colors
+    (function() {
+      var sheets = document.styleSheets;
+      for (var i = 0; i < sheets.length; i++) {
+        if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+        try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+        var j = 0;
+        while (j < rules.length) {
+          var rule = rules[j];
+          if (/^code span/.test(rule.selectorText)) {
+            j++;
+            continue;
+          }
+          sheets[i].deleteRule(j);
+        }
+      }
+    })();
+  </script>
+  $endif$
+
+  $for(css)$
+  <link rel="stylesheet" href="$css$" $if(html5)$$else$type="text/css" $endif$/>
+  $endfor$
+
+</head>
+<body>
+
+  $for(include-before)$
+  $include-before$
+  $endfor$
+
+  <div class="container-lg clearfix pl-4 pt-5 pr-4 col-12 col-md-10 col-lg-8 col-xl-6">
+
+    <div>
+
+      <main>
+
+        $if(header)$
+        <header>
+          $if(title)$
+          <p id="title" class="h1">$title$</p>
+          $endif$
+          $if(subtitle)$
+          <p id="subtitle" class="h3 mt-n3">$subtitle$</p>
+          $endif$
+          $if(author)$
+          <p id="author" class="f5 mt-n3">$for(author)$$author$$sep$, $endfor$</p>
+          $endif$
+          $if(date)$
+          <p id="date" class="f5 mt-n3 anim-fade-in border-bottom">$date$</p>
+          $endif$
+        </header>
+        $else$
+        $endif$
+
+        $if(toc)$
+        <div class="d-inline-flex float-md-right float-lg-right">
+          <div class="flex-1">
+            <div class="Box color-shadow-small float-right Box--condensed f5 lh-condensed mt-md-8 mt-lg-8 ml-lg-2 ml-md-2">
+              <div class="Box-header"> 
+                <h4 class="m-0">Table of Contents</h4>
+              </div>
+              <div class="Box-row"> 
+                <div class="mr-4 mt-2">
+                  $toc$
+                </div>
+              </div> 
+            </div>
+          </div>
+        </div>
+        $endif$
+
+        <!-- Main body of the document -->
+        <div class="markdown-body">
+          $body$
+        </div>
+
+
+        $for(include-after)$
+        $include-after$
+        $endfor$
+      </main>
+
+
+      $if(footer)$
+      <div class="border-top pt-2">
+        <div class="col-8 float-left pr-2">
+          $if(author)$
+          <p id="author" class="text-small">Made by $for(author)$$author$$sep$, $endfor$</p>
+          $endif$
+        </div>
+        <div class="col-4 float-right pl-2 lh-condensed text-small anim-fade-in">
+          <p>Built with <a href="https://rmarkdown.rstudio.com">R Markdown</a>, using <a href="https://primermd.amirmasoudabdol.name">{primermd}</a> theme.</p>
+        </div>
+      </div>
+      $endif$
+
+    </div>
+
+  </div>
+
+  $if(use-prism)$
+  <script>
+    document.querySelectorAll('pre').forEach(function(el) {
+      if (!el.className) return;
+      el.classList.add('lang-' + el.classList[0]);
+    });
+  </script>
+  <script data-external="1" src="https://unpkg.com/prismjs@latest/components/prism-core.min.js"></script>
+  <script data-external="1" src="https://unpkg.com/prismjs@latest/plugins/autoloader/prism-autoloader.min.js"></script>
+  $endif$
+
+  $if(mathjax-url)$
+  <!-- Dynamically load mathjax for compatibility with self-contained -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src  = "$mathjax-url$";
+      document.getElementsByTagName("head")[0].appendChild(script);
+    });
+  </script>
+  $endif$
+
+  $if(list-style-none)$
+  <script>
+  // Adds the `list-style-none` class to all the `ul` elements
+    (function() {
+      var bullets = document.getElementsByTagName("ul");
+      for (var i = 0; i < bullets.length; i++) {
+        bullets[i].classList.add("list-style-none");
+      }
+    })();
+  </script>
+  $endif$
+
+
+  $if(enable-checkboxes)$
+  <script>
+  // Removes the `disabled` attribute from the checkboxes
+    (function() {
+      var checkboxes = document.getElementsByTagName("input");
+      for (var i = 0; i < checkboxes.length; i++) {
+        checkboxes[i].removeAttribute("disabled");
+      }
+    })();
+  </script>
+  $endif$
+
+
+
+</body>
+</html>

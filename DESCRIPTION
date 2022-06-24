@@ -1,0 +1,27 @@
+Type: Package
+Package: primermd
+Title: A 'rmarkdown' Template based on Primer CSS
+Version: 0.0.1
+Authors@R: 
+    person(given = "Amir Masoud",
+           family = "Abdol",
+           role = c("aut", "cre"),
+           email = "i@amirmasoudabdol.name")
+Maintainer: Amir Masoud Abdol <i@amirmasoudabdol.name>
+Description: This is a R Markdown theme based on GitHub's Primer CSS. It 
+  supports both light/dark theme.
+License: MIT + file LICENSE
+LazyData: true
+Imports:
+  rmarkdown,
+  htmltools
+Suggests: 
+    testthat (>= 2.1.0)
+URL: https://primermd.amirmasoudabdol.name
+BugReports: https://github.com/amirmasoudabdol/primermd/issues
+Depends:
+    R (>= 3.4.0)
+Encoding: UTF-8
+Language: en-US
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.0

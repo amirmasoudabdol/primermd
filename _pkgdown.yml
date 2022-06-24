@@ -1,0 +1,44 @@
+url: https://primermd.amirmasoudabdol.name
+
+home:
+  title: primermd - a 'rmarkdown' template
+  description: A 'rmarkdown' Template based on Primer CSS
+
+authors:
+  Amir Masoud Abdol:
+    href: https://amirmasoudabdol.name
+
+development:
+  mode: auto
+
+repo:
+  url:
+    home: https://github.com/amirmasoudabdol/primermd/
+    source: https://github.com/amirmasoudabdol/primermd/blob/main/
+    issue: https://github.com/amirmasoudabdol/primermd/issues/
+    user: https://github.com/amirmasoudabdol/
+  branch: main
+
+navbar:
+  structure:
+    left:  [home, reference, news] #, in_the_wild]
+    right: [github]
+  # components:
+  #   articles:
+  #   in_the_wild:
+  #     text: "In the Wild"
+  #     href: articles/in-the-wild.html
+
+template:
+  package: preferably
+  params:
+    github-sponsor:
+      url: https://github.com/sponsors/amirmasoudabdol/
+  opengraph:
+    image:
+      src: man/figures/twitter-summary-card.png
+      alt: A 'rmarkdown' Template based on Primer CSS
+    twitter:
+      creator: "@amirmasoudabdol"
+      site: https://amirmasoudabdol.name
+      card: summary_large_image
