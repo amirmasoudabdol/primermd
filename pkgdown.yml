@@ -2,7 +2,7 @@ pandoc: 2.7.3
 pkgdown: 2.0.5
 pkgdown_sha: ~
 articles: {}
-last_built: 2022-06-30T14:33Z
+last_built: 2022-06-30T14:35Z
 urls:
   reference: https://primermd.amirmasoudabdol.name/reference
   article: https://primermd.amirmasoudabdol.name/articles
