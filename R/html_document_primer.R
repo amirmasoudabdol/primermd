@@ -21,7 +21,7 @@
 #' @param light_theme The light theme, e.g., "light"
 #' @param dark_theme The dark theme, e.g., "dark", "dark_dimmed",
 #' "dark_high_contrast"
-#' @param list_style_none Indicates whether list elements should use bullets
+#' @param list_style Indicates whether list elements should use bullets
 #' or not
 #' @param enable_checkboxes Indicates whether or not check boxes can be modified
 #' @param highlight Syntax highlight engine and style, either a built-in Pandoc
@@ -59,7 +59,7 @@ html_document_primer <- function(
     auto_theme = TRUE,
     light_theme = "light",
     dark_theme = "dark_dimmed",
-    list_style_none = FALSE,
+    list_style = NULL,
     enable_checkboxes = FALSE,
     css = NULL,
     toc = FALSE,
@@ -91,7 +91,7 @@ html_document_primer <- function(
     if (isTRUE(auto_theme)) c("--variable", "auto-theme"),
     rmarkdown::pandoc_variable_arg("light-theme", light_theme),
     rmarkdown::pandoc_variable_arg("dark-theme", dark_theme),
-    if (isTRUE(list_style_none)) c("--variable", "list-style-none"),
+    if (!is.null(list_style)) c("--variable", "list-style-none"),
     if (isTRUE(enable_checkboxes)) c("--variable", "enable-checkboxes")
   )
 
@@ -106,7 +106,7 @@ html_document_primer <- function(
     rmarkdown::pandoc_toc_args(toc, toc_depth)
   )
 
-  for (sheet in list("https://unpkg.com/@primer/css@latest/dist/primer.css")) {
+  for (sheet in list("https://unpkg.com/@primer/css@20.2.0/dist/primer.css")) {
     pandoc_args <- c(pandoc_args, "--css", sheet)
   }
 

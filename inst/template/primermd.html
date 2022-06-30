@@ -86,12 +86,13 @@ $if(auto-theme)$data-color-mode="auto"$else$$endif$ data-light-theme="$light-the
         $if(toc)$
         <div class="d-inline-flex float-md-right float-lg-right">
           <div class="flex-1">
-            <div class="Box color-shadow-small float-right Box--condensed f5 lh-condensed mt-md-8 mt-lg-8 ml-lg-2 ml-md-2">
+            <div class="Box color-shadow-small float-right Box--condensed f5 lh-condensed"> 
+              <!-- mt-md-8 mt-lg-8 ml-lg-2 ml-md-2"> -->
               <div class="Box-header">
-                <h4 class="m-0">Table of Contents</h4>
+                <h4 class="Box-title m-0">Table of Contents</h4>
               </div>
               <div class="Box-row">
-                <div class="mr-4 mt-2">
+                <div class="mr-4 mt-2 ml-2">
                   $toc$
                 </div>
               </div>

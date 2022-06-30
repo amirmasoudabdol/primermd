@@ -1,22 +1,17 @@
 ---
-title: "Skeleton of a R Markdown Document"
-subtitle: "A Sample Document"
+title: "Extended R Markdown's Skeleton"
+subtitle: "Showcasing {primermd} Features"
 author: "Amir Masoud Abdol"
 date: "Jun 23, 2022"
 output: 
   primermd::html_document_primer:
-    header: true
     toc: true
-    mathjax: "default"
-    footer: false
-    enable_checkboxes: true
+    toc_depth: 2
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-
-## R Markdown
 
 This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
@@ -25,14 +20,6 @@ When you click the **Knit** button a document will be generated that includes bo
 ```{r cars}
 summary(cars)
 ```
-
-### Sub
-
-This is a sub
-
-#### Sub Sub
-
-This is a Sub sub
 
 ## Including Plots
 
@@ -45,27 +32,41 @@ plot(cars)
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 
 
-**The Cauchy-Schwarz Inequality**
+## A Cool Math Function
 
-$$\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)$$
+<!-- [**Weierstrass function**](https://en.wikipedia.org/wiki/Weierstrass_function) -->
 
+<!-- $$f(x)=\sum_{n=0} ^\infty a^n \cos(b^n \pi x),$$ -->
 
-> **Note**
-> This is a note
+<!-- where $0<a<1$,  $b$ is a positive odd integer, and -->
 
-> **Warning**
-> This is a warning
+<!-- $$ab > 1+\frac{3}{2} \pi.$$ -->
 
+![Plot of Weierstrass function over the interval [−2, 2]. Like other fractals, the function exhibits self-similarity: every zoom (red circle) is similar to the global plot.](https://upload.wikimedia.org/wikipedia/commons/6/60/WeierstrassFunction.svg)
+
+## Todo List
 
 - [ ] Todo
 - [x] Done
 
+
+## Code 
+
+### Ruby 💎
+
 ```ruby
-require 'redcarpet'
-markdown = Redcarpet.new("Hello World!")
-puts markdown.to_html
+def sum_eq_n?(arr, n)
+  return true if arr.empty? && n == 0
+
+  arr.product(arr).reject { |a,b| a == b }.any? { |a,b| a + b == n }
+end
 ```
 
-# Title of 
+### Modern Functional C++ Code 👀
 
-## A very very very very very long section
+```cpp
+std::vector<int> const vi{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+using namespace ranges;
+auto rng = vi | views::filter([](int i) { return i % 2 == 0; }) |
+               views::transform([](int i) { return std::to_string(i); });
+```

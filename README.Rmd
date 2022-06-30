@@ -93,7 +93,19 @@ output:
 By setting the `list_style_none` parameter to `true`, you can remove bullets
 from an unordered list or numbers from an ordered list.
 
+``` yaml
+output: 
+  primermd::html_document_primer:
+    list_style: none
+```
+
 ### Enable the Checkboxes
 
 By setting the `enable_checkboxes` parameter to `true`, you can enable the
 check box controls such that readers can interact with them.
+
+``` yaml
+output: 
+  primermd::html_document_primer:
+    enable_checkboxes: true
+```
