@@ -7,6 +7,7 @@ output:
   primermd::html_document_primer:
     toc: true
     toc_depth: 2
+    mathjax: default
 ---
 
 ```{r setup, include=FALSE}
@@ -34,13 +35,13 @@ Note that the `echo = FALSE` parameter was added to the code chunk to prevent pr
 
 ## A Cool Math Function
 
-<!-- [**Weierstrass function**](https://en.wikipedia.org/wiki/Weierstrass_function) -->
+[**Weierstrass function**](https://en.wikipedia.org/wiki/Weierstrass_function)
 
-<!-- $$f(x)=\sum_{n=0} ^\infty a^n \cos(b^n \pi x),$$ -->
+$$f(x)=\sum_{n=0} ^\infty a^n \cos(b^n \pi x),$$
 
-<!-- where $0<a<1$,  $b$ is a positive odd integer, and -->
+where $0<a<1$,  $b$ is a positive odd integer, and
 
-<!-- $$ab > 1+\frac{3}{2} \pi.$$ -->
+$$ab > 1+\frac{3}{2} \pi.$$
 
 ![Plot of Weierstrass function over the interval [−2, 2]. Like other fractals, the function exhibits self-similarity: every zoom (red circle) is similar to the global plot.](https://upload.wikimedia.org/wikipedia/commons/6/60/WeierstrassFunction.svg)
 
