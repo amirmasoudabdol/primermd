@@ -7,6 +7,10 @@ editor_options:
 
 <!-- README.md is generated from README.Rmd. Please edit this file -->
 
+> 🚨 {primermd} is still under development, use it at own risk!
+
+---
+
 # primermd <img src="man/figures/logo.png" width="160" align="right"/>
 
 **{primermd}** is a versatile template for `{rmarkdown}` based on Primer

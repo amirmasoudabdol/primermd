@@ -1,10 +1,17 @@
 
 <!-- README.md is generated from README.Rmd. Please edit this file -->
 
+> 🚨 {primermd} is still under development, use it at own risk!
+
+------------------------------------------------------------------------
+
 # primermd <img src="man/figures/logo.png" width="160" align="right"/>
 
-**{primermd}** is a versatile template for ‘rmarkdown’ based on Primer
-CSS developed by GitHub.
+**{primermd}** is a versatile template for `{rmarkdown}` based on Primer
+CSS developed by GitHub. It is very readable, accessible, and
+responsive. You can customize a few things, but not a lot. I am hoping
+that I can extend its functionalities that it can use some of the Primer
+CSS goodies.
 
 ## Installation
 
@@ -15,7 +22,7 @@ You can install the latest development version from
 remotes::install_github("amirmasoudabdol/primermd")
 ```
 
-and soon, hopefully, you can install the released version of primermd
+and, soon hopefully, you can install the released version of primermd
 from CRAN:
 
 ``` r
@@ -87,7 +94,26 @@ output:
 By setting the `list_style_none` parameter to `true`, you can remove
 bullets from an unordered list or numbers from an ordered list.
 
+``` yaml
+output: 
+  primermd::html_document_primer:
+    list_style: none
+```
+
 ### Enable the Checkboxes
 
 By setting the `enable_checkboxes` parameter to `true`, you can enable
 the check box controls such that readers can interact with them.
+
+``` yaml
+output: 
+  primermd::html_document_primer:
+    enable_checkboxes: true
+```
+
+## Acknolegmenets
+
+I should thank [Garrick](https://github.com/gadenbuie) for his awesome R
+Markdown themes, [cleanmd](https://github.com/gadenbuie/cleanrmd). I
+have started this project based on his project, and I have learned so
+much from it! 🙏🏼
