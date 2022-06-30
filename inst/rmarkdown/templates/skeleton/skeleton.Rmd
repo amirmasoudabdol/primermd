@@ -9,7 +9,6 @@ output:
     toc: true
     mathjax: "default"
     footer: false
-    list_style_none: true
     enable_checkboxes: true
 ---
 

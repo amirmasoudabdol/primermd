@@ -1,25 +1,25 @@
 
 <!-- README.md is generated from README.Rmd. Please edit this file -->
 
-# primermd
+# primermd <img src="man/figures/logo.png" width="160" align="right"/>
 
 **{primermd}** is a versatile template for ‘rmarkdown’ based on Primer
 CSS developed by GitHub.
 
 ## Installation
 
-You can install the released version of primermd from CRAN:
-
-``` r
-install.packages("primermd")
-```
-
 You can install the latest development version from
 [GitHub](https://github.com/amirmasoudabdol/primermd/):
 
 ``` r
-# install.packages("remotes")
 remotes::install_github("amirmasoudabdol/primermd")
+```
+
+and soon, hopefully, you can install the released version of primermd
+from CRAN:
+
+``` r
+install.packages("primermd")
 ```
 
 ## Usage
@@ -84,5 +84,10 @@ output:
 
 ### List Style
 
-By setting the `list_style_none: true`, you can remove bullets from an unordered
-list or numbers from an ordered list.
+By setting the `list_style_none` parameter to `true`, you can remove
+bullets from an unordered list or numbers from an ordered list.
+
+### Enable the Checkboxes
+
+By setting the `enable_checkboxes` parameter to `true`, you can enable
+the check box controls such that readers can interact with them.

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="$lang$" xml:lang="$lang$"$if(dir)$ dir="$dir$"$endif$ 
+<html xmlns="http://www.w3.org/1999/xhtml" lang="$lang$" xml:lang="$lang$"$if(dir)$ dir="$dir$"$endif$
 $if(auto-theme)$data-color-mode="auto"$else$$endif$ data-light-theme="$light-theme$" data-dark-theme="$dark-theme$">
 <head>
 
@@ -74,10 +74,10 @@ $if(auto-theme)$data-color-mode="auto"$else$$endif$ data-light-theme="$light-the
           <p id="subtitle" class="h3 mt-n3">$subtitle$</p>
           $endif$
           $if(author)$
-          <p id="author" class="f5 mt-n3">$for(author)$$author$$sep$, $endfor$</p>
+          <p id="author" class="f5 mt-n2">$for(author)$$author$$sep$, $endfor$</p>
           $endif$
           $if(date)$
-          <p id="date" class="f5 mt-n3 anim-fade-in border-bottom">$date$</p>
+          <p id="date" class="f5 mt-n2 anim-fade-in border-bottom">$date$</p>
           $endif$
         </header>
         $else$
@@ -87,14 +87,14 @@ $if(auto-theme)$data-color-mode="auto"$else$$endif$ data-light-theme="$light-the
         <div class="d-inline-flex float-md-right float-lg-right">
           <div class="flex-1">
             <div class="Box color-shadow-small float-right Box--condensed f5 lh-condensed mt-md-8 mt-lg-8 ml-lg-2 ml-md-2">
-              <div class="Box-header"> 
+              <div class="Box-header">
                 <h4 class="m-0">Table of Contents</h4>
               </div>
-              <div class="Box-row"> 
+              <div class="Box-row">
                 <div class="mr-4 mt-2">
                   $toc$
                 </div>
-              </div> 
+              </div>
             </div>
           </div>
         </div>

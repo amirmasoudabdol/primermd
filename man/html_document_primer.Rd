@@ -38,6 +38,11 @@ user's system preferences}
 \item{dark_theme}{The dark theme, e.g., "dark", "dark_dimmed",
 "dark_high_contrast"}
 
+\item{list_style_none}{Indicates whether list elements should use bullets
+or not}
+
+\item{enable_checkboxes}{Indicates whether or not check boxes can be modified}
+
 \item{css}{CSS and/or Sass files to include. Files with an extension of .sass
 or .scss are compiled to CSS via \code{sass::sass()}. Also, if \code{theme} is a
 \code{\link[bslib:bs_theme]{bslib::bs_theme()}} object, Sass code may reference the relevant Bootstrap

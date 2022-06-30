@@ -1,8 +1,8 @@
 url: https://primermd.amirmasoudabdol.name
 
 home:
-  title: primermd - a 'rmarkdown' template
-  description: A 'rmarkdown' Template based on Primer CSS
+  title: primermd - A R Markdown Template
+  description: An accessible, responsive, and readable theme for R Markdown based on GitHub’s Primer CSS framework
 
 authors:
   Amir Masoud Abdol:
@@ -21,13 +21,8 @@ repo:
 
 navbar:
   structure:
-    left:  [home, reference, news] #, in_the_wild]
+    left:  [home, reference, news]
     right: [github]
-  # components:
-  #   articles:
-  #   in_the_wild:
-  #     text: "In the Wild"
-  #     href: articles/in-the-wild.html
 
 template:
   package: preferably
@@ -37,7 +32,7 @@ template:
   opengraph:
     image:
       src: man/figures/twitter-summary-card.png
-      alt: A 'rmarkdown' Template based on Primer CSS
+      alt: An accessible, responsive, and readable theme for R Markdown based on GitHub’s Primer CSS framework
     twitter:
       creator: "@amirmasoudabdol"
       site: https://amirmasoudabdol.name

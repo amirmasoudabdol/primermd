@@ -7,14 +7,25 @@ editor_options:
 
 <!-- README.md is generated from README.Rmd. Please edit this file -->
 
-# primermd
+# primermd <img src="man/figures/logo.png" width="160" align="right"/>
 
 **{primermd}** is a versatile template for 'rmarkdown' based on Primer
 CSS developed by GitHub.
 
 ## Installation
 
-```{r child="man/rmd/installation.Rmd"}
+
+You can install the latest development version from
+[GitHub](https://github.com/amirmasoudabdol/primermd/):
+
+``` r
+remotes::install_github("amirmasoudabdol/primermd")
+```
+
+and, soon hopefully, you can install the released version of primermd from CRAN:
+
+``` r
+install.packages("primermd")
 ```
 
 ## Usage

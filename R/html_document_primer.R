@@ -21,6 +21,9 @@
 #' @param light_theme The light theme, e.g., "light"
 #' @param dark_theme The dark theme, e.g., "dark", "dark_dimmed",
 #' "dark_high_contrast"
+#' @param list_style_none Indicates whether list elements should use bullets
+#' or not
+#' @param enable_checkboxes Indicates whether or not check boxes can be modified
 #' @param highlight Syntax highlight engine and style, either a built-in Pandoc
 #'   highlighting theme, a theme provided by \pkg{rmarkdown}, or a
 #'   [prismjs](https://prismjs.com/index.html) theme (see below). Pass
