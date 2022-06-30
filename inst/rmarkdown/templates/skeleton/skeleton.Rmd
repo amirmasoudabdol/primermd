@@ -26,9 +26,36 @@ summary(cars)
 
 You can also embed plots, for example:
 
-```{r, echo=TRUE}
-plot(cars)
+```r
+library(ggplot2); library(sfthemes)
+
+gp <- ggplot(aes(x = Sepal.Length,
+                 y = Sepal.Width,
+                 color = Species)) +
+        geom_point(aes(shape = Species)) + 
+        xlab("Sepal Length") + ylab("Sepal Width") +
+        labs(title = "SF Light/Dark Themes", 
+             subtitle = "iOS Light/Dark Color Palette") +
+        geom_smooth(method="lm", aes(fill = Species))
+        
+# Light
+gp + theme_sf_light(size_class = "xxxLarge") +
+        scale_colour_ios_light(accessible = FALSE) +
+        scale_fill_ios_light(accessible = FALSE) +
+        theme(legend.position = "bottom")
+
+# Dark
+gp + theme_sf_dark(size_class = "xxxLarge") +
+        scale_colour_ios_dark(accessible = FALSE) +
+        scale_fill_ios_dark(accessible = FALSE) +
+        theme(legend.position = "bottom")
 ```
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="front-page-sample-dark.png">
+  <source media="(prefers-color-scheme: light)" srcset="front-page-sample-light.png">
+  <img src="front-page-sample-light.png">
+</picture>
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 

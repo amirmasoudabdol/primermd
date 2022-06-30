@@ -27,3 +27,6 @@ docs
 
 # PyCharm
 .idea/
+
+# primermd files
+inst/rmarkdown/templates/skeleton/skeleton.html
