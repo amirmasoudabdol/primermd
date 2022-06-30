@@ -9,8 +9,10 @@ editor_options:
 
 # primermd <img src="man/figures/logo.png" width="160" align="right"/>
 
-**{primermd}** is a versatile template for 'rmarkdown' based on Primer
-CSS developed by GitHub.
+**{primermd}** is a versatile template for `{rmarkdown}` based on Primer
+CSS developed by GitHub. It is very readable, accessible, and responsive. 
+You can customize a few things, but not a lot. I am hoping that I can extend
+its functionalities that it can use some of the Primer CSS goodies.
 
 ## Installation
 
@@ -109,3 +111,8 @@ output:
   primermd::html_document_primer:
     enable_checkboxes: true
 ```
+
+
+## Acknolegmenets
+
+I should thank [Garrick](https://github.com/gadenbuie) for his awesome R Markdown themes, [cleanmd](https://github.com/gadenbuie/cleanrmd). I have started this project based on his project, and I have learned so much from it! 🙏🏼
