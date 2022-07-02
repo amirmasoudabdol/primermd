@@ -1,10 +1,6 @@
 
 <!-- README.md is generated from README.Rmd. Please edit this file -->
 
-> 🚨 {primermd} is still under development, use it at own risk!
-
-------------------------------------------------------------------------
-
 # primermd <img src="man/figures/logo.png" width="160" align="right"/>
 
 **{primermd}** is a versatile template for `{rmarkdown}` based on Primer
@@ -22,11 +18,11 @@ You can install the latest development version from
 remotes::install_github("amirmasoudabdol/primermd")
 ```
 
-and, soon hopefully, you can install the released version of primermd
-from CRAN:
+and, hopefully **soon**, you can install the released version of
+primermd from CRAN:
 
 ``` r
-install.packages("primermd")
+install.packages("primermd") # Not Working Yet!
 ```
 
 ## Usage
@@ -111,7 +107,7 @@ output:
     enable_checkboxes: true
 ```
 
-## Acknolegmenets
+## Acknowledgments
 
 I should thank [Garrick](https://github.com/gadenbuie) for his awesome R
 Markdown themes, [cleanmd](https://github.com/gadenbuie/cleanrmd). I
