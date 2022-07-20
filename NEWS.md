@@ -1,3 +1,3 @@
-## preferably 0.1.0
+# primermd 0.1.0
 
-- This is the initial release of the `primermd` template!
+This is the initial release of the package.

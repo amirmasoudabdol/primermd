@@ -1,5 +1,5 @@
 ---
-title: "Extended R Markdown's Skeleton"
+title: "Extended R Markdown Skeleton"
 subtitle: "Showcasing {primermd} Features"
 author: "Amir Masoud Abdol"
 date: "Jun 23, 2022"

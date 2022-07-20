@@ -3,11 +3,19 @@
 
 # primermd <img src="man/figures/logo.png" width="160" align="right"/>
 
-**{primermd}** is a versatile template for `{rmarkdown}` based on Primer
-CSS developed by GitHub. It is very readable, accessible, and
-responsive. You can customize a few things, but not a lot. I am hoping
-that I can extend its functionalities that it can use some of the Primer
-CSS goodies.
+**`{primermd}`** is a versatile template for `{rmarkdown}` based on
+[Primer CSS](http://primer.style/css/) developed by GitHub. It is very
+readable, accessible, and responsive. However, it is really not meant to
+be used for a simple one-page document. That being said, I quite like
+it, and that’s why this package exists! I wanted to be able to get as
+close as I can to GitHub’s Markdown rendering, so, I went with their
+framework! 🙃
+
+`{primermd}` is not very customizable, in fact, I have intentionally
+removed some basic options that you can find in similar template
+packages, e.g., prism syntax highlight. As said, my main goal is to
+replicate GitHub’s Markdown rendering, and add some of the features that
+they are adding to their website, e.g., check boxes, alerts, etc.
 
 ## Installation
 
@@ -114,14 +122,12 @@ highlighting.
 
 ## Todos
 
--   [ ] Remove the `prismjs` functionality, and replace it with GitHub’s
-    default syntax highlight colors
 -   [ ] Make it possible to change the width of the page
 -   [ ] Make use of [Octicons](https://primer.style/octicons/),
     replacing Font Awesome
 -   [ ] Add `use_primermd()`
--   [ ] Add an option to load the `primer.css` locally
--   [ ] Make sure that the table of content looks alright
+-   [ ] Find a matching color scheme for syntax highlighting
+-   [x] Make sure that the table of content looks alright
 
 ## Acknowledgments
 
