@@ -70,8 +70,6 @@ where $0<a<1$,  $b$ is a positive odd integer, and
 
 $$ab > 1+\frac{3}{2} \pi.$$
 
-![Plot of Weierstrass function over the interval [−2, 2]. Like other fractals, the function exhibits self-similarity: every zoom (red circle) is similar to the global plot.](https://upload.wikimedia.org/wikipedia/commons/6/60/WeierstrassFunction.svg)
-
 ## Todo List
 
 - [ ] Todo
