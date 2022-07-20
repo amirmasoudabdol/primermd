@@ -24,29 +24,7 @@
 #' @param list_style Indicates whether list elements should use bullets
 #' or not
 #' @param enable_checkboxes Indicates whether or not check boxes can be modified
-#' @param highlight Syntax highlight engine and style, either a built-in Pandoc
-#'   highlighting theme, a theme provided by \pkg{rmarkdown}, or a
-#'   [prismjs](https://prismjs.com/index.html) theme (see below). Pass
-#'   \code{NULL} to prevent syntax highlighting.
-#'
-#'   **Pandoc themes.** By default, uses Pandoc's highlighting style. Pandoc's
-#'   built-in styles include "tango", "pygments", "kate", "monochrome",
-#'   "espresso", "zenburn", "haddock" and "breezedark".
-#'
-#'   Two custom styles are also included, "arrow", an accessible color scheme,
-#'   and "rstudio", which mimics the default IDE theme. Alternatively, supply a
-#'   path to a `.theme` to use
-#'   [a custom Pandoc style](https://pandoc.org/MANUAL.html#syntax-highlighting).
-#'   Note that custom themes require Pandoc 2.0+.
-#'
-#'   **Prism themes.** To use the [prismjs](https://prismjs.com/index.html)
-#'   syntax highlighter, pass one of "prism", "prism-coy", "prism-dark",
-#'   "prism-funky", "prism-okaidia", "prism-solarizedlight", "prism-tomorrow",
-#'   or "prism-twilight". To use an alternate Prism theme file, pass the URL or
-#'   path to the theme's CSS file prefixed with "prism:", e.g.
-#'   `prism:my-theme.css`. Note that the Prism dependencies are not embedded
-#'   into self-contained documents so they will require an active internet
-#'   connection to work.
+#' @param highlight Indicates whether or not the code should be highlighted
 #'
 #' @inheritParams rmarkdown::html_document
 #'
@@ -73,7 +51,7 @@ html_document_primer <- function(
     footer = TRUE,
     keep_md = FALSE,
     dev = "png",
-    highlight = "default",
+    highlight = TRUE,
     pandoc_args = NULL,
     extra_dependencies = NULL,
     md_extensions = NULL,
@@ -82,18 +60,20 @@ html_document_primer <- function(
 
   deps <- c(
     list(
-    htmltools::htmlDependency(
-      name = "primermd",
-      package = "primermd",
-      version = utils::packageVersion("primermd"),
-      src = Reduce(file.path, c("resources", "primer")),
-      stylesheet = "primer.css",
-      all_files = FALSE
+      htmltools::htmlDependency(
+        name = "primermd",
+        package = "primermd",
+        version = utils::packageVersion("primermd"),
+        src = Reduce(file.path, c("resources", "primer")),
+        stylesheet = "primer.css",
+        all_files = FALSE
       )
     ),
     extra_dependencies,
     suppress_header_attrs()
   )
+
+  print(deps)
 
   pandoc_args <- c(
     pandoc_args,
@@ -104,6 +84,8 @@ html_document_primer <- function(
     if (isTRUE(enable_checkboxes)) c("--variable", "enable-checkboxes")
   )
 
+
+
   # disable fontawesome if !use_fontawesome
   # add to pandoc_args rmarkdown::pandoc_toc_args(toc, toc_depth)
   pandoc_args <- c(
@@ -111,17 +93,16 @@ html_document_primer <- function(
     # if (!isTRUE(use_fontawesome)) c("--variable", "disable-fontawesome"),
     if (isTRUE(header)) c("--variable", "header"),
     if (isTRUE(footer)) c("--variable", "footer"),
-    pandoc_html_highlight_args(highlight),
     rmarkdown::pandoc_toc_args(toc, toc_depth)
   )
 
+  css <- c(css, system.file("resources/pandoc/highlight.css", package = "primermd"))
+
   # Note:
-  #   I had some problem loading the primer.css locally, and instead I was using this
-  #   as a hack to load the page
-  #
-  # for (sheet in list("https://unpkg.com/@primer/css@20.2.0/dist/primer.css")) {
-  #   pandoc_args <- c(pandoc_args, "--css", sheet)
-  # }
+  #   I'm using this to add 
+  for (sheet in css) {
+    pandoc_args <- c(pandoc_args, "--css", sheet)
+  }
 
   mathjax_url <- if (!is.null(mathjax) && mathjax %in% c("default", "local")) {
     mathjax_local <- Sys.getenv("RMARKDOWN_MATHJAX_PATH", unset = NA)

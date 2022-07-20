@@ -21,12 +21,11 @@ $if(auto-theme)$data-color-mode="auto"$else$$endif$ data-light-theme="$light-the
   $header-includes$
   $endfor$
 
-  $if(use-prism)$$use-prism$$endif$
+  $for(css)$
+  <link rel="stylesheet" href="$css$" $if(html5)$$else$type="text/css" $endif$/>
+  $endfor$
 
   $if(highlighting-css)$
-  <style type="text/css" data-origin="pandoc">
-    $highlighting-css$
-  </style>
   <script>
   // remove everything from pandoc code styles _except_ for 'code span' colors
     (function() {
@@ -48,9 +47,6 @@ $if(auto-theme)$data-color-mode="auto"$else$$endif$ data-light-theme="$light-the
   </script>
   $endif$
 
-  $for(css)$
-  <link rel="stylesheet" href="$css$" $if(html5)$$else$type="text/css" $endif$/>
-  $endfor$
 
 </head>
 <body>
@@ -77,7 +73,7 @@ $if(auto-theme)$data-color-mode="auto"$else$$endif$ data-light-theme="$light-the
           <p id="author" class="f5 mt-n2">$for(author)$$author$$sep$, $endfor$</p>
           $endif$
           $if(date)$
-          <p id="date" class="f5 mt-n2 anim-fade-in border-bottom">$date$</p>
+          <p id="date" class="f5 mt-n2 pd-2 anim-fade-in">$date$</p>
           $endif$
         </header>
         $else$

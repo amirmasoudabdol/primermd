@@ -9,7 +9,7 @@ html_document_primer(
   auto_theme = TRUE,
   light_theme = "light",
   dark_theme = "dark_dimmed",
-  list_style_none = FALSE,
+  list_style = NULL,
   enable_checkboxes = FALSE,
   css = NULL,
   toc = FALSE,
@@ -22,7 +22,7 @@ html_document_primer(
   footer = TRUE,
   keep_md = FALSE,
   dev = "png",
-  highlight = "default",
+  highlight = TRUE,
   pandoc_args = NULL,
   extra_dependencies = NULL,
   md_extensions = NULL,
@@ -38,7 +38,7 @@ user's system preferences}
 \item{dark_theme}{The dark theme, e.g., "dark", "dark_dimmed",
 "dark_high_contrast"}
 
-\item{list_style_none}{Indicates whether list elements should use bullets
+\item{list_style}{Indicates whether list elements should use bullets
 or not}
 
 \item{enable_checkboxes}{Indicates whether or not check boxes can be modified}
@@ -76,29 +76,7 @@ outputting HTML directly into the markdown document).}
 
 \item{dev}{Graphics device to use for figure output (defaults to png)}
 
-\item{highlight}{Syntax highlight engine and style, either a built-in Pandoc
-highlighting theme, a theme provided by \pkg{rmarkdown}, or a
-\href{https://prismjs.com/index.html}{prismjs} theme (see below). Pass
-\code{NULL} to prevent syntax highlighting.
-
-\strong{Pandoc themes.} By default, uses Pandoc's highlighting style. Pandoc's
-built-in styles include "tango", "pygments", "kate", "monochrome",
-"espresso", "zenburn", "haddock" and "breezedark".
-
-Two custom styles are also included, "arrow", an accessible color scheme,
-and "rstudio", which mimics the default IDE theme. Alternatively, supply a
-path to a \code{.theme} to use
-\href{https://pandoc.org/MANUAL.html#syntax-highlighting}{a custom Pandoc style}.
-Note that custom themes require Pandoc 2.0+.
-
-\strong{Prism themes.} To use the \href{https://prismjs.com/index.html}{prismjs}
-syntax highlighter, pass one of "prism", "prism-coy", "prism-dark",
-"prism-funky", "prism-okaidia", "prism-solarizedlight", "prism-tomorrow",
-or "prism-twilight". To use an alternate Prism theme file, pass the URL or
-path to the theme's CSS file prefixed with "prism:", e.g.
-\code{prism:my-theme.css}. Note that the Prism dependencies are not embedded
-into self-contained documents so they will require an active internet
-connection to work.}
+\item{highlight}{Indicates whether or not the code should be highlighted}
 
 \item{pandoc_args}{Additional command line options to pass to pandoc}
 
