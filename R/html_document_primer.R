@@ -80,11 +80,20 @@ html_document_primer <- function(
     self_contained = TRUE
 ) {
 
-  # deps <- c(
-  #   list(primermd_theme_dependency(theme)),
-  #   extra_dependencies,
-  #   suppress_header_attrs()
-  # )
+  deps <- c(
+    list(
+    htmltools::htmlDependency(
+      name = "primermd",
+      package = "primermd",
+      version = utils::packageVersion("primermd"),
+      src = Reduce(file.path, c("resources", "primer")),
+      stylesheet = "primer.css",
+      all_files = FALSE
+      )
+    ),
+    extra_dependencies,
+    suppress_header_attrs()
+  )
 
   pandoc_args <- c(
     pandoc_args,
@@ -106,9 +115,13 @@ html_document_primer <- function(
     rmarkdown::pandoc_toc_args(toc, toc_depth)
   )
 
-  for (sheet in list("https://unpkg.com/@primer/css@20.2.0/dist/primer.css")) {
-    pandoc_args <- c(pandoc_args, "--css", sheet)
-  }
+  # Note:
+  #   I had some problem loading the primer.css locally, and instead I was using this
+  #   as a hack to load the page
+  #
+  # for (sheet in list("https://unpkg.com/@primer/css@20.2.0/dist/primer.css")) {
+  #   pandoc_args <- c(pandoc_args, "--css", sheet)
+  # }
 
   mathjax_url <- if (!is.null(mathjax) && mathjax %in% c("default", "local")) {
     mathjax_local <- Sys.getenv("RMARKDOWN_MATHJAX_PATH", unset = NA)
@@ -158,12 +171,11 @@ html_document_primer <- function(
         primermd_file("template", "primermd.html")
       ),
     ),
-    # clean_supporting = self_contained,
     base_format = rmarkdown::html_document_base(
       template = NULL,
       theme = NULL,
       mathjax = mathjax,
-      extra_dependencies = extra_dependencies,
+      extra_dependencies = deps,
       # Makes sure that files are embedded in the HTML
       self_contained = self_contained,
       bootstrap_compatible = FALSE,
