@@ -4,18 +4,22 @@
 # primermd <img src="man/figures/logo.png" width="160" align="right"/>
 
 **`{primermd}`** is a versatile template for `{rmarkdown}` based on
-[Primer CSS](http://primer.style/css/) developed by GitHub. It is very
-readable, accessible, and responsive. However, it is really not meant to
-be used for a simple one-page document. That being said, I quite like
-it, and that’s why this package exists! I wanted to be able to get as
-close as I can to GitHub’s Markdown rendering, so, I went with their
-framework! 🙃
+[Primer CSS](http://primer.style/css/) developed by GitHub. Primer CSS
+is very readable, accessible, and responsive; however, it is really not
+meant to be used for a simple one-page document. That being said, I
+quite like it, and that’s why this package exists! I wanted to be able
+to get as close as I can to GitHub’s Markdown rendering, so, I went with
+their framework! 🙃
 
-`{primermd}` is not very customizable, in fact, I have intentionally
-removed some basic options that you can find in similar template
-packages, e.g., prism syntax highlight. As said, my main goal is to
-replicate GitHub’s Markdown rendering, and add some of the features that
-they are adding to their website, e.g., check boxes, alerts, etc.
+`{primermd}` is, by design, not very customizable, in fact, I have
+intentionally removed some basic options that you can find in similar
+template packages, e.g., prismjs syntax highlight, Font Awesome. As
+said, my main goal is to replicate GitHub’s Markdown rendering, and add
+some of the features that they are adding to their website, e.g., check
+boxes, alerts, etc.
+
+In the future, if I have some time, I would like to continue tweaking
+this, and keeping it up to date with GitHub’s changes, and aesthetic.
 
 ![](man/figures/comparison.png)
 
@@ -32,12 +36,13 @@ and, hopefully **soon**, you can install the released version of
 primermd from CRAN:
 
 ``` r
-install.packages("primermd") # Not Working Yet!
+# ⚠️ Not Working Yet!
+install.packages("primermd") 
 ```
 
 ## Usage
 
-You may active the `{primermd}` theme by adding the following line to
+You may activate the `{primermd}` theme by adding the following line to
 the top of your R Markdown file.
 
 ``` yaml
@@ -48,7 +53,7 @@ output:
 ## Customizations
 
 {primermd} offers a few customization options and features, e.g., theme,
-title customization. You can tweak the behavior, and look of the theme
+title customization. You can tweak the behavior, and looks of the theme
 by adding more parameters to your YAML header as described below.
 
 ### Themes
@@ -71,6 +76,11 @@ output:
     dark_theme: dark_dimmed
 ```
 
+> ⚠️ At the moment, RStudio does not adapt to user preferences and
+> therefore {primermd} does not work as expcted inside the RStudio.
+> However, if you open the generated file in your browser you’ll get the
+> adaptive behavior.
+
 ### Title Customization
 
 By default, {primermd} adds the title, subtitle, author and the date to
@@ -85,8 +95,8 @@ output:
 
 ### Footer Customization
 
-By default, the footer of the page contains a name of the authors, but
-it is possible to hide the footer entirely by setting the `footer`
+By default, the footer of the page contains the authors names’, but it
+is possible to hide the footer entirely by setting the `footer`
 parameter to `false`.
 
 ``` yaml
@@ -120,13 +130,16 @@ output:
 ### Syntax Highlight
 
 By setting the `highlight` to `false`, you can disable the syntax
-highlighting.
+highlighting. {primermd} does not allow you to change the color scheme
+of the code highlighter. I’m working on enabling this, but it is a bit
+tricky because I want to have a list of schemes that look good with all
+the settings.
 
 ## Todos
 
 -   [ ] Make it possible to change the width of the page
 -   [ ] Make use of [Octicons](https://primer.style/octicons/),
-    replacing Font Awesome
+    replacing the Font Awesome
 -   [ ] Add `use_primermd()`
 -   [ ] Find a matching color scheme for syntax highlighting
 -   [x] Make sure that the table of content looks alright
@@ -135,5 +148,6 @@ highlighting.
 
 I should thank [Garrick](https://github.com/gadenbuie) for his awesome R
 Markdown themes, [cleanmd](https://github.com/gadenbuie/cleanrmd). I
-have started this project based on his project, and I have learned so
-much from it! 🙏🏼
+wanted to make this theme for a while, but I had no time, and
+inspiration to start it. His project motivated me to work on this
+project. Oh, and I could not have done it without his code. Thanks!
