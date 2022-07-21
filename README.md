@@ -17,6 +17,8 @@ packages, e.g., prism syntax highlight. As said, my main goal is to
 replicate GitHub’s Markdown rendering, and add some of the features that
 they are adding to their website, e.g., check boxes, alerts, etc.
 
+![](man/figures/comparison.png)
+
 ## Installation
 
 You can install the latest development version from
