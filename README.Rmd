@@ -24,7 +24,6 @@ website, e.g., check boxes, alerts, etc.
 
 ![](man/figures/comparison.png)
 
-
 ## Installation
 
 
